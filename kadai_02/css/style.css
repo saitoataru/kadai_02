@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 20px;
+}
+.text_center{
+    text-align: center;
+}
+.textBox {
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 0px;
+    position: relative;
+    }
+.monster{
+    padding: 0;
+    margin: 0 ;
+}
+.monster_pic{
+    text-align: center;
+}
+.monster_text{
+    background-color: #333;
+    padding: 0;
+    margin: 0;
+    height: 50px; 
+    color: #FFF;
+}
+.HP{
+    background-color: #000000;
+    color: #FFF;
+}
+.pic_area{
+    text-align: center;
+}
+
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+main{
+    border-bottom:1px solid #ccc;
+    position: relative;
+}
+footer{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+textarea{
+    margin: 3%;
+    width: 95%;
+    height: 230px;
+    font-size:80%;
+    box-shadow: 3px 3px 3px 3px #555;
+  }
+  p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+.announce{
+    margin: auto;
+    height: 60px;
+}

@@ -1,0 +1,196 @@
+
+    //１ページ目のLPのJSコード
+    $("#monster1").hover(
+        function(){
+        $("#monster1").css('width', '30%');},
+        function(){
+        $("#monster1").css('width', '20%');}
+    )
+    $("#monster2").hover(
+        function(){
+        $("#monster1").css('width', '30%');},
+        function(){
+        $("#monster1").css('width', '20%');}
+    )
+    $("#monster3").hover(
+        function(){
+        $("#monster1").css('width', '30%');},
+        function(){
+        $("#monster1").css('width', '20%');}
+    )
+    $("#monster1").on("click",function(){
+        $("h1").text("ヒトカゲ。君に決めた！");
+        localStorage.setItem("pokemon","ヒトカゲ")
+      
+    })
+    $("#monster2").on("click",function(){
+        $("h1").text("ゼニガメ。君に決めた！");
+        localStorage.setItem("pokemon","ゼニガメ")
+       
+    })
+    $("#monster3").on("click",function(){
+        $("h1").text("フシギダネ。君に決めた！");
+        localStorage.setItem("pokemon","フシギダネ")
+    
+       
+    })
+
+    let data = localStorage.getItem('pokemon');
+    console.log(data);
+
+    if(data=="ヒトカゲ"){
+        $("#waza_1").text("火炎放射");
+        $("#waza_2").text("火の粉");
+        $("#waza_3").text("ほのおのうず");
+    }else if(data=="ゼニガメ"){
+        $("#waza_1").text("水鉄砲");
+        $("#waza_2").text("ハイドロポンプ");
+        $("#waza_3").text("なみのり");
+    }else if(data=="フシギダネ"){
+        $("#waza_1").text("つるのむち");
+        $("#waza_2").text("葉っぱカッター");
+        $("#waza_3").text("たいあたり");
+    }
+    
+
+
+
+    var a={0:5,1:0,2:30,3:40};
+    var b={0:10,1:0,2:20,3:60};
+    var num = Math.floor(Math.random()*4);
+    var num = Math.floor(Math.random()*4);   
+       
+    $("#waza_1").on("click",function(){
+        console.log(a[num]);
+        console.log(b[num]);
+        if(data=="ヒトカゲ"){
+            $("#pic").attr("src","img/monster1_waza1.jpeg");
+            $("#announce").text("『火炎放射』を選択！")
+        }
+            else if(data=="ゼニガメ"){
+            $("#pic").attr("src","img/monster2_waza1.jpeg");
+            $("#announce").text("『水鉄砲』を選択！")
+        }
+            else if(data=="フシギダネ"){
+            $("#pic").attr("src","img/monster3_waza1.jpeg");
+            $("#announce").text("『つるのむち』を選択！");
+            };
+        
+        if(a[num]==0){
+            $("#HP_me").text("攻撃失敗・・・");
+            localStorage.setItem("attack_me","攻撃失敗・・・");
+        }
+        else{
+            $("#HP_me").text(a[num] + "の攻撃力");
+            localStorage.setItem("attack_me",a[num] + "の攻撃力");
+        }
+        if(b[num]==0){
+            $("#HP_you").text("攻撃失敗・・・");
+            localStorage.setItem("attack_you","攻撃失敗・・・");
+        }
+        else{
+            $("#HP_you").text(b[num] + "の攻撃力");
+            localStorage.setItem("attack_you",b[num] + "の攻撃力");
+        }
+       
+       
+        if(a[num]>b[num]){
+            $("#result").text("you_win")
+            localStorage.setItem("result","you win");
+        }else if(a[num]==b[num]){
+            $("#result").text("draw")
+            localStorage.setItem("result","draw");
+        }else{
+            $("#result").text("you_lose");
+            localStorage.setItem("result","you lose");
+        }
+        })
+    $("#waza_2").on("click",function(){
+        console.log(a[num]);
+        console.log(b[num]);
+        if(data=="ヒトカゲ"){
+                $("#pic").attr("src","img/monster1_waza2.jpeg");
+                $("#announce").text("『火の粉』を選択！")
+            }else if(data=="ゼニガメ"){
+                $("#pic").attr("src","img/monster2_waza2.jpeg");
+                $("#announce").text("『ハイドロポンプ』を選択！")
+            }else if(data=="フシギダネ"){
+                $("#pic").attr("src","img/monster3_waza2.jpeg");
+                $("#announce").text("『葉っぱカッター』を選択！")
+        };
+        if(a[num]==0){
+                $("#HP_me").text("攻撃失敗・・・");
+                localStorage.setItem("attack_me","攻撃失敗・・・");
+            }
+            else{
+                $("#HP_me").text(a[num] + "の攻撃力");
+                localStorage.setItem("attack_me",a[num] + "の攻撃力");
+            };
+        if(b[num]==0){
+                $("#HP_you").text("攻撃失敗・・・");
+                localStorage.setItem("attack_me","攻撃失敗・・・");
+            }else{
+                $("#HP_you").text(b[num] + "の攻撃力");
+                localStorage.setItem("attack_you",b[num] + "の攻撃力");
+        };
+        if(a[num]>b[num]){
+                $("#result").text("you_win")
+                localStorage.setItem("result","you win");
+            }else if(a[num]==b[num]){
+                $("#result").text("draw")
+                localStorage.setItem("result","draw");
+            }else{
+                $("#result").text("you_lose");
+                localStorage.setItem("result","you lose");
+        };
+        })
+    $("#waza_3").on("click",function(){
+        console.log(a[num]);
+        console.log(b[num]);
+        if(data=="ヒトカゲ"){
+            $("#pic").attr("src","img/monster1_waza3.jpeg");
+            $("#announce").text("『ほのおのうず』を選択！")
+        }
+            else if(data=="ゼニガメ"){
+            $("#pic").attr("src","img/monster2_waza3.jpeg");
+            $("#announce").text("『なみのり』を選択！")
+        }
+            else if(data=="フシギダネ"){
+            $("#pic").attr("src","img/monster3_waza3.jpeg");
+            $("#announce").text("『たいあたり』を選択！")
+            }
+        if(a[num]==0){
+                $("#HP_me").text("攻撃失敗・・・");
+                localStorage.setItem("attack_me","攻撃失敗・・・");
+            }
+            else{
+                $("#HP_me").text(a[num] + "の攻撃力");
+                localStorage.setItem("attack_me",a[num] + "の攻撃力");
+        };
+        if(b[num]==0){
+                $("#HP_you").text("攻撃失敗・・・");
+                localStorage.setItem("attack_you","攻撃失敗・・・");
+            }else{
+                $("#HP_you").text(b[num] + "の攻撃力");
+                localStorage.setItem("attack_you",b[num] + "の攻撃力");
+        };
+
+        if(a[num]>b[num]){
+            $("#result").text("you_win")
+            localStorage.setItem("result","you win");
+        }else if(a[num]==b[num]){
+            $("#result").text("draw")
+            localStorage.setItem("result","draw");
+        }else{
+            $("#result").text("you_lose")
+            localStorage.setItem("result","you lose");
+            }
+        })
+
+        // result
+        let result = localStorage.getItem('result');
+        $("#result").text(result)
+        let atck_me = localStorage.getItem('attack_me');
+        $("#HP_me").text(atck_me)
+        let atck_you = localStorage.getItem('attack_you');
+        $("#HP_you").text(atck_you)
